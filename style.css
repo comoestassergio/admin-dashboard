@@ -253,3 +253,73 @@ h1 {
     background-color: black;
     border-radius: 50%;
 }
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.announcements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-left: 2rem;
+    gap: 1.45rem;
+}
+
+.announcements__card {
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.announcement {
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 2px solid black;
+
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.announcement:nth-of-type(1){
+    margin-top: 1rem;
+}
+
+.announcement:nth-of-type(3){
+    border-bottom: none;
+}
+
+.announcement__title {
+    margin: 0 0 .5rem 0;
+}
+
+.announcement__text {
+    margin: 0;
+}
+
+.trending__card {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: .5rem;
+}
+
+.trend {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.trend__name {
+    margin: .5rem 0 0 0;
+    padding: 0;
+}
