@@ -2,6 +2,11 @@
 
 /* general styles */
 
+:root {
+    --gradient: linear-gradient(90deg, hsla(74, 64%, 59%, 1) 0%, hsla(2, 100%, 70%, 1) 100%);
+    --main-color: #BADA55;
+}
+
 * {
     box-sizing: border-box;
     font-family: Montserrat;
@@ -75,6 +80,16 @@ html, body {
     text-decoration: none;
     color: black;
     font-size: 1.2rem;
+
+    transition: all 200ms ease;
+}
+
+.link:hover {
+    padding: .5rem 2rem;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 600;
+    border-radius: 2rem;
 }
 
 /* header styles */
@@ -84,7 +99,7 @@ header {
     grid-template-rows: repeat(2, 1fr);
     gap: .7rem;
 
-    max-height: 25vh;
+    height: minmax(20vh, 30vh);
 
     padding: .5rem 8rem;
 
@@ -123,6 +138,8 @@ img {
 }
 
 .btn {
+    position: relative;
+
     font-size: 1rem;
     padding: .5rem 1.25rem;
     border-radius: 2rem;
@@ -132,6 +149,14 @@ img {
     color: white;
 
     cursor: pointer;
+
+    transition: background-color 300ms ease;
+}
+
+.btn:hover {
+    background-color: var(--main-color);
+    transform-origin: center;
+    color: black;
 }
 
 .search-container {
@@ -155,10 +180,14 @@ img {
 
     flex-grow: 1;
 
+    transition: background-color 200ms ease;
+
 }
 
 .searchbar:focus-visible {
     outline: none;
+    background-color: var(--main-color);
+    color: black;
 }
 
 .header__lower {
@@ -209,28 +238,30 @@ img {
 .main__grid {
     display: grid;
     grid-template: 1fr 10fr / 3fr 1fr; 
-    padding: 1rem 4rem;
+    padding: 0 4rem;
 
-    max-height: 75vh;
+    height: 70vh;
 }
 
 .projects {
     display: grid;
-    grid-template: 1fr 3fr 3fr / repeat(2, 1fr);
+    grid-template: 1fr 3fr 3fr / repeat(auto-fit, minmax(400px, 1fr));
     gap: 1rem;
 }
 
 h1 {
     grid-row: 1;
     grid-column: span 2;
+    align-self: center;
 }
 
 .projects__card {
     display: grid;
-    grid-template-rows: 4rem 6rem 4rem; 
+    grid-template-rows: 1fr 2fr 1fr; 
 
-    max-height: fit-content;
     border: 1px solid black;
+
+    height: 15rem;
 
     border-radius: 2rem;
 }
@@ -241,8 +272,8 @@ h1 {
 }
 
 .card__description {
-    margin-left: 3rem;
-    max-width: 60%;
+    margin: 0 0 0 3rem;
+    max-width: 85%;
 }
 
 .card__actions {
@@ -313,10 +344,12 @@ h1 {
 
 .announcement__text {
     margin: 0;
+    font-size: .9rem;
 }
 
 .trending > h1 {
     text-align: center;
+    margin-top: 0;
 }
 
 .trending__card {
