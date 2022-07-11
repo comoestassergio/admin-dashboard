@@ -25,7 +25,7 @@ html, body {
 
 .body__grid {
     display: grid;
-    grid-template: 1fr 4fr / 1fr 6fr;
+    grid-template: 1fr 4fr / minmax(200px, 1fr) 6fr;
 
     height: 100vh;
 }
@@ -307,6 +307,7 @@ h1 {
     align-items: center;
 
     margin-left: 2rem;
+    margin-top: 1rem;
 }
 
 .announcements__card {
@@ -367,4 +368,10 @@ h1 {
 .trend__name {
     margin: .5rem 0 0 0;
     padding: 0;
+}
+
+@media (max-width: 1700px) {
+    .projects__card {
+        grid-column: span 2;
+    }
 }
